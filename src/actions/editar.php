@@ -1,12 +1,12 @@
 <?php
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 session_start();
 use Sarah\Agenda\Classes\Contato;
 $contato = new Contato;
 
 //Redireciona para a página principal caso o usuário tente acesar a página diretamente
 if(empty($_GET['id']) || empty($_GET['nome']) || empty($_GET['telefone'])){
-    header('Location: ../index.php');
+    header('Location: ../../index.php');
     exit();
 } else{
     (int) $id = trim(htmlspecialchars($_GET['id']));
@@ -21,7 +21,7 @@ if(isset($_POST['nome']) && isset($_POST['telefone'])){
     if(!empty($_POST['nome']) && !empty($_POST['telefone'])){
         try{
             $contato->editarContato($id, $_POST['nome'], $_POST['telefone']);
-            header('Location: ../index.php', True, 301);
+            header('Location: ../../index.php', True, 301);
             exit();
         } catch(Exception $e){
             echo '<div class="btn deletar">'.$e->getMessage().'</div>';
@@ -37,7 +37,7 @@ if(isset($_POST['nome']) && isset($_POST['telefone'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
     <title>Editar Contato</title>
 </head>
 <body>
@@ -51,7 +51,7 @@ if(isset($_POST['nome']) && isset($_POST['telefone'])){
             <input type="text" name="telefone" value="<?= htmlspecialchars($telefone) ?>" required>
 
             <button type="submit" class="btn editar">Salvar</button>
-            <a href="../index.php" class="btn voltar">Voltar</a>
+            <a href="../../index.php" class="btn voltar">Voltar</a>
         </form>
     </div>
 </body>

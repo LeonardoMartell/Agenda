@@ -1,5 +1,5 @@
 <?php
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 session_start();
 use Sarah\Agenda\Classes\Contato;
 $contato = new Contato;
@@ -8,12 +8,12 @@ $contato = new Contato;
 if(isset($_GET['id']) && !empty($_GET['id'])){
     try{
         $contato->deletarContato($_GET['id']);
-        header('Location: ../index.php', True, 301);
+        header('Location: ../../index.php', True, 301);
         exit();
     }catch(Exception $e){
         echo '<h1 class="btn deletar">'.$e->getMessage().'</h1>';
     }
 } else{
-    header('Location: ../index.php');
+    header('Location: ../../index.php');
     exit();
 }

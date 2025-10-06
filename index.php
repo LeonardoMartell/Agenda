@@ -13,7 +13,7 @@ require 'src/config.php';
 <body>
     <div class="container">
         <h1>Agenda Telefonica</h1>
-        <a href="src/add.php" class="btn criar">Adicionar Contato</a>
+        <a href="src/actions/add.php" class="btn criar">Adicionar Contato</a>
         <table class="agenda">
             <thead>
                 <tr>
@@ -25,14 +25,14 @@ require 'src/config.php';
             <tbody>
                 <?php foreach($lista as $item): ?>
                 <?php
-                    $url = 'src/editar.php?id='.$item['id'].'&nome='.urlencode($item['Nome']).'&telefone='.urlencode($item['Telefone']);
+                    $url = 'src/actions/editar.php?id='.$item['id'].'&nome='.urlencode($item['Nome']).'&telefone='.urlencode($item['Telefone']);
                 ?>
                 <tr>
                     <td><?= $item['Nome']; ?></td>
                     <td><?= $item['Telefone']; ?></td>
                     <td class="acoes">
                         <a href="<?= $url ?>" class="btn editar">Editar</a>
-                        <a href="src/deletar.php?id=<?= $item['id'];?>" class="btn deletar">Deletar</a>
+                        <a href="src/actions/deletar.php?id=<?= $item['id'];?>" class="btn deletar">Deletar</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

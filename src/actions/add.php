@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 use Sarah\Agenda\Classes\Contato;
 $contato = new Contato;
 if(!empty($_POST['nome']) && !empty($_POST['telefone'])){
@@ -8,7 +8,7 @@ if(!empty($_POST['nome']) && !empty($_POST['telefone'])){
     $telefone = trim(htmlspecialchars($_POST['telefone']));
     try{
         $contato->criarContato($nome, $telefone);
-        header('Location: ../index.php', True, 301);
+        header('Location: ../../index.php', True, 301);
         exit();
     }catch(Exception $e){
         echo '<div class="btn deletar">'.$e->getMessage().'</div>';
@@ -21,7 +21,7 @@ if(!empty($_POST['nome']) && !empty($_POST['telefone'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
     <title>Adicionar Contato</title>
 </head>
 <body>
@@ -35,7 +35,7 @@ if(!empty($_POST['nome']) && !empty($_POST['telefone'])){
             <input type="text" name="telefone" required>
 
             <button type="submit" class="btn criar">Salvar</button>
-            <a href="../index.php" class="btn voltar">Voltar</a>
+            <a href="../../index.php" class="btn voltar">Voltar</a>
         </form>
     </div>
 </body>
