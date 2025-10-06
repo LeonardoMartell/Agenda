@@ -1,0 +1,9 @@
+{
+    "name": "sarah/agenda",
+    "autoload": {
+        "psr-4": {
+            "Sarah\\Agenda\\": "src/"
+        }
+    },
+    "require": {}
+}
