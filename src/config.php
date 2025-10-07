@@ -1,6 +1,6 @@
 <?php
 require 'vendor/autoload.php';
-use Sarah\Agenda\Classes\Contato;
+use Projeto\Agenda\Classes\Contato;
 
 //Como o objetivo é guardar os dados na memória, salvarei os dados em uma session
 session_start();

@@ -1,7 +1,7 @@
 <?php
 require '../../vendor/autoload.php';
 session_start();
-use Sarah\Agenda\Classes\Contato;
+use Projeto\Agenda\Classes\Contato;
 $contato = new Contato;
 
 //Confere se os dados passados estão corretos, caso incorreto retorna uma mensagem de erro, e caso vazio redireciona para a pagina principal

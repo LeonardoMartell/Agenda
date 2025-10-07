@@ -1,8 +1,8 @@
 {
-    "name": "sarah/agenda",
+    "name": "projeto/agenda",
     "autoload": {
         "psr-4": {
-            "Sarah\\Agenda\\": "src/"
+            "Projeto\\Agenda\\": "src/"
         }
     },
     "require": {}

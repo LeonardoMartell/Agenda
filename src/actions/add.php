@@ -1,17 +1,21 @@
 <?php 
 session_start();
 require '../../vendor/autoload.php';
-use Sarah\Agenda\Classes\Contato;
+use Projeto\Agenda\Classes\Contato;
 $contato = new Contato;
-if(!empty($_POST['nome']) && !empty($_POST['telefone'])){
-    $nome = trim(htmlspecialchars($_POST['nome']));
-    $telefone = trim(htmlspecialchars($_POST['telefone']));
-    try{
-        $contato->criarContato($nome, $telefone);
-        header('Location: ../../index.php', True, 301);
-        exit();
-    }catch(Exception $e){
-        echo '<div class="btn deletar">'.$e->getMessage().'</div>';
+if(isset($_POST['nome']) && isset($_POST['telefone'])){
+    if(!empty($_POST['nome']) && !empty($_POST['telefone'])){
+        $nome = trim(htmlspecialchars($_POST['nome']));
+        $telefone = trim(htmlspecialchars($_POST['telefone']));
+        try{
+            $contato->criarContato($nome, $telefone);
+            header('Location: ../../index.php', True, 301);
+            exit();
+        }catch(Exception $e){
+            echo '<div class="btn deletar">'.$e->getMessage().'</div>';
+        }
+    } else{
+        echo '<div class="btn deletar">preencha todas as informações pedidas</div>';
     }
 }
 ?>

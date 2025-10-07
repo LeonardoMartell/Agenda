@@ -1,7 +1,7 @@
 <?php
 require '../../vendor/autoload.php';
 session_start();
-use Sarah\Agenda\Classes\Contato;
+use Projeto\Agenda\Classes\Contato;
 $contato = new Contato;
 
 //Redireciona para a página principal caso o usuário tente acesar a página diretamente

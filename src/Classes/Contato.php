@@ -1,5 +1,5 @@
 <?php
-namespace Sarah\Agenda\Classes;
+namespace Projeto\Agenda\Classes;
 
 use InvalidArgumentException;
 
